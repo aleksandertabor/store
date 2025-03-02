@@ -32,6 +32,12 @@ const getProducts = async () => {
 };
 
 const deleteProduct = async (id) => {
+    if (!usePage().props.auth.user) {
+        router.get(route("login"));
+
+        return;
+    }
+
     try {
         error.value = false;
         await axios.delete(route("api.products.destroy", id));
