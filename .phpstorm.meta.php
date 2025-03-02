@@ -2343,7 +2343,8 @@ namespace PHPSTORM_META {
     override(\tap(0), type(0));
     override(\optional(0), type(0));
 
-            registerArgumentsSet('auth', );
+            registerArgumentsSet('auth', 
+'viewAny','create','view','update','delete',);
         registerArgumentsSet('configs', 
 'app.name','app.env','app.debug','app.url','app.frontend_url',
 'app.asset_url','app.timezone','app.locale','app.fallback_locale','app.faker_locale',
@@ -2453,9 +2454,15 @@ namespace PHPSTORM_META {
 'signed','throttle','verified',);
         registerArgumentsSet('routes', 
 'debugbar.openhandler','debugbar.clockwork','debugbar.assets.css','debugbar.assets.js','debugbar.cache.delete',
-'debugbar.queries.explain','sanctum.csrf-cookie','storage.local',);
+'debugbar.queries.explain','sanctum.csrf-cookie','api.products.index','api.products.store','api.products.show',
+'api.products.update','api.products.destroy','dashboard','products.create',
+'products.edit','profile.edit','profile.update','profile.destroy','products.show',
+'register','login','password.request',
+'password.email','password.reset','password.store','verification.notice','verification.verify',
+'verification.send','password.confirm','password.update','logout',
+'storage.local',);
         registerArgumentsSet('views', 
-'welcome','laravel-exceptions-renderer::components.card','laravel-exceptions-renderer::components.context','laravel-exceptions-renderer::components.editor','laravel-exceptions-renderer::components.header',
+'app','laravel-exceptions-renderer::components.card','laravel-exceptions-renderer::components.context','laravel-exceptions-renderer::components.editor','laravel-exceptions-renderer::components.header',
 'laravel-exceptions-renderer::components.icons.chevron-down','laravel-exceptions-renderer::components.icons.chevron-up','laravel-exceptions-renderer::components.icons.computer-desktop','laravel-exceptions-renderer::components.icons.moon','laravel-exceptions-renderer::components.icons.sun',
 'laravel-exceptions-renderer::components.layout','laravel-exceptions-renderer::components.navigation','laravel-exceptions-renderer::components.theme-switcher','laravel-exceptions-renderer::components.trace','laravel-exceptions-renderer::components.trace-and-editor',
 'laravel-exceptions-renderer::show','laravel-exceptions::401','laravel-exceptions::402','laravel-exceptions::403','laravel-exceptions::404',
