@@ -3,11 +3,10 @@ SAIL=./vendor/bin/sail
 help: ## Displays this list of targets with descriptions
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(firstword $(MAKEFILE_LIST)) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-30s\033[0m %s\n", $$1, $$2}'
 
-install-sail: ## Install Sail
+install: ## Install application
 	docker run --rm -u "$$(id -u):$$($(id -g))" -v "$$(pwd):/var/www/html" -w /var/www/html laravelsail/php84-composer:latest composer install --ignore-platform-reqs
-
-install-app: ## Install application
 	cp .env.example .env
+	${SAIL} up -d
 	${SAIL} php artisan key:generate
 	${SAIL} php artisan migrate:fresh
 	${SAIL} php artisan db:seed
