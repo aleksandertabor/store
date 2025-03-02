@@ -41,7 +41,8 @@ const getProduct = async () => {
                                 <v-card>
                                     <v-img
                                         :src="product.image"
-                                        height="300px"
+                                        max-width="300"
+                                        class="mx-auto"
                                         cover
                                     ></v-img>
                                     <v-card-title class="text-h5">{{
