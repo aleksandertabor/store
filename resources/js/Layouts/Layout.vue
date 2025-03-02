@@ -37,12 +37,25 @@ const showingNavigationDropdown = ref(false);
                                     :href="route('dashboard')"
                                     :active="route().current('dashboard')"
                                 >
-                                    Dashboard
+                                    Products
                                 </NavLink>
+                                <template v-if="!$page.props.auth.user">
+                                    <NavLink
+                                        :href="route('login')"
+                                    >
+                                        Log in
+                                    </NavLink>
+
+                                    <NavLink
+                                        :href="route('register')"
+                                    >
+                                        Register
+                                    </NavLink>
+                                </template>
                             </div>
                         </div>
 
-                        <div class="hidden sm:ms-6 sm:flex sm:items-center">
+                        <div class="hidden sm:ms-6 sm:flex sm:items-center" v-if="$page.props.auth.user">
                             <!-- Settings Dropdown -->
                             <div class="relative ms-3">
                                 <Dropdown align="right" width="48">
@@ -144,13 +157,14 @@ const showingNavigationDropdown = ref(false);
                             :href="route('dashboard')"
                             :active="route().current('dashboard')"
                         >
-                            Dashboard
+                            Products
                         </ResponsiveNavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->
                     <div
                         class="border-t border-gray-200 pb-1 pt-4"
+                        v-if="$page.props.auth.user"
                     >
                         <div class="px-4">
                             <div

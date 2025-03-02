@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.v-field__input {
+    --tw-ring-shadow: 0 0 #000 !important;
+    @apply active:border-none focus:border-none  active:outline-none focus:outline-none focus:shadow-none active:shadow-none bg-inherit;
+}
